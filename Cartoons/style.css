@@ -48,7 +48,7 @@ a:hover {
   color: yellowgreen;
 }
 
-.hamburger {
+.humburger {
   display: none;
   cursor: pointer;
 }
@@ -63,33 +63,33 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
+  .humburger {
     display: block;
   }
 
-  .hamburger.active.bars:nth-child(2) {
+  .humburger.active .bars:nth-child(2) {
     opacity: 0;
   }
-  .hamburger.active.bars:nth-child(1) {
+  .humburger.active .bars:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  .hamburger.active.bars:nth-child(3) {
+  .humburger.active .bars:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
   .nav-menu {
     position: fixed;
-    left: -150%;
+    right: -100%;
     top: 70px;
     gap: 0;
     flex-direction: column;
     background-color: black;
-    width: 80%;
+    width: 100%;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.5s;
   }
 
-  .nav-items {
+  .nav-links {
     margin: 16px 0;
   }
 
