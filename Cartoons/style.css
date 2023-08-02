@@ -32,6 +32,8 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 80px;
+  z-index: 1;
+  margin-right: 80px;
 }
 
 .nav-branding {
@@ -61,7 +63,32 @@ a:hover {
   transition: all 0.3s ease-in-out;
   background-color: white;
 }
+#main-section {
+  position: relative;
+  top: 50px;
+  margin-left: 2%;
+}
+.data {
+  border: grey solid 1px;
+  padding: 0.5rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 1rem;
+  box-shadow: 3px 4px black;
+  border-radius: 20px;
+}
 
+.image {
+  justify-self: center;
+  height: 14rem;
+  width: 13rem;
+  border-radius: 20px;
+}
+
+.title {
+  display: inline-block;
+}
 @media (max-width: 768px) {
   .humburger {
     display: block;
@@ -95,5 +122,11 @@ a:hover {
 
   .nav-menu.active {
     right: 0;
+  }
+}
+
+@media (max-width: 571px) {
+  #main-section {
+    margin-left: 3rem;
   }
 }
