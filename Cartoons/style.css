@@ -10,7 +10,7 @@ header {
 
 li {
   list-style: none;
-  font-size: 19px;
+  font-size: 24px;
 }
 
 a {
@@ -24,6 +24,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+  margin-right: 80px;
 }
 
 .nav-menu {
@@ -32,7 +33,6 @@ a {
   align-items: center;
   gap: 80px;
   z-index: 1;
-  margin-right: 80px;
 }
 
 .nav-branding {
@@ -78,7 +78,7 @@ a:hover {
 h2 {
   font-size: 2rem;
   margin: 30px 0;
-  color: rgb(142, 142, 0);
+  color: rgb(69, 69, 8);
 }
 
 .main p {
@@ -90,7 +90,7 @@ h2 {
 
 .btn {
   margin-top: 50px;
-  width: 80%;
+  width: 70%;
   font-size: 25px;
   padding: 5px 10px;
   background-color: brown;
@@ -136,9 +136,6 @@ h2 {
   text-decoration: none;
 }
 
-.title {
-  display: inline-block;
-}
 @media (max-width: 768px) {
   .humburger {
     display: block;
@@ -156,7 +153,7 @@ h2 {
 
   .nav-menu {
     position: fixed;
-    right: -100%;
+    right: -120%;
     top: 70px;
     gap: 0;
     flex-direction: column;
@@ -172,6 +169,10 @@ h2 {
 
   .nav-menu.active {
     right: 0;
+  }
+
+  .navbar {
+    margin-right: 10px;
   }
 }
 
