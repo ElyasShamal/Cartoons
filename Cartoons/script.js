@@ -15,3 +15,22 @@ document.querySelectorAll(".nav-links").forEach((n) =>
 );
 
 //end of humburger
+
+// fetch request to get the data
+document.addEventListener("click", () => {
+  fetch("https://api.sampleapis.com/cartoons/cartoons2D")
+    .then((response) => response.json())
+    .then((data) => data.forEach((element) => getData(element)));
+});
+
+const getData = (element) => {
+  let card = document.createElement("div");
+  card.classList.add("data");
+
+  let img = document.createElement("img");
+  img.src = element.image;
+
+  card.append(img);
+
+  document.getElementById("collection").appendChild(card);
+};
