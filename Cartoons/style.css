@@ -5,7 +5,7 @@
 }
 
 header {
-  background-color: black;
+  background-color: brown;
   width: 100vw;
 }
 
@@ -68,6 +68,36 @@ a:hover {
   top: 50px;
   margin-left: 2%;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 30px 0;
+  color: rgb(142, 142, 0);
+}
+
+.main p {
+  font-size: 30px;
+  max-width: 70%;
+  margin: auto;
+  text-align: start;
+}
+
+.btn {
+  margin-top: 50px;
+  width: 80%;
+  font-size: 25px;
+  padding: 5px 10px;
+  background-color: brown;
+  color: white;
+}
+
 .data {
   border: grey solid 1px;
   padding: 0.5rem;
