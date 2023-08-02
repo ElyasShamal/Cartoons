@@ -6,7 +6,6 @@
 
 header {
   background-color: brown;
-  width: 100vw;
 }
 
 li {
@@ -114,6 +113,27 @@ h2 {
   height: 14rem;
   width: 13rem;
   border-radius: 20px;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: brown;
+  margin-top: 210px;
+  height: 140px;
+}
+
+#creator {
+  color: white;
+  margin-top: 20px;
+}
+
+#social-media a {
+  color: white;
+  margin: 20px 20px;
+  font-size: 30px;
+  text-decoration: none;
 }
 
 .title {
