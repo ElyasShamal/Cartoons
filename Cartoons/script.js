@@ -46,12 +46,63 @@ const getData = (element) => {
   addBtn.classList.add("like-btn");
   addBtn.textContent = "Add";
   addBtn.addEventListener("click", () => {
-    addBtn.textContent = "added ";
-
-    // need to add post request to post fav carton to favorate page
+    addBtn.textContent = "Added ";
+    addToFavoriate(fav.id);
   });
 
   div.append(img, h3, p, span2, addBtn);
 
   document.getElementById("collection").appendChild(div);
 };
+
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", debounce(handleSearch, 300));
+
+async function handleSearch() {
+  const query = searchInput.value.trim();
+
+  if (query === "") {
+    searchResults.innerHTML = "";
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      `https://api.sampleapis.com/cartoons/cartoons2D`
+    );
+    const data = await response.json();
+
+    const results = data.filter((cartoon) =>
+      cartoon.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    displayResults(results);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+function displayResults(results) {
+  if (results.length === 0) {
+    searchResults.innerHTML = "No results found.";
+    return;
+  }
+
+  const resultHTML = results
+    .map((cartoon) => `<div>${cartoon.title}</div>`)
+    .join("");
+  searchResults.innerHTML = resultHTML;
+}
+
+// Debounce function to limit API calls
+function debounce(func, delay) {
+  let timeout;
+  return function () {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), delay);
+  };
+}

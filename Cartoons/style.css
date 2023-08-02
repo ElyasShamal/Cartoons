@@ -87,12 +87,11 @@ h2 {
   color: brown;
 }
 
-#search {
+#searchInput {
   width: 400px;
   padding: 3px 15px;
   font-size: 16px;
   border: none;
-  outline: none;
 }
 .main p {
   font-size: 30px;
@@ -134,6 +133,18 @@ h2 {
   width: 14rem;
   border-radius: 20px;
   padding-bottom: 10px;
+}
+
+#searchResults {
+  position: absolute;
+  background-color: white;
+  color: black;
+  z-index: 1;
+  width: 100%;
+}
+
+form {
+  position: relative;
 }
 
 #footer {
@@ -205,7 +216,7 @@ h2 {
 }
 
 @media (max-width: 1111px) {
-  #search {
+  #searchInput {
     display: none;
   }
 }
