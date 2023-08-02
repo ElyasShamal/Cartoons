@@ -46,8 +46,11 @@ const getData = (element) => {
   addBtn.classList.add("like-btn");
   addBtn.textContent = "Add";
   addBtn.addEventListener("click", () => {
-    addBtn.textContent = "Added ";
-    addToFavoriate(fav.id);
+    if (addBtn.textContent === "Add") {
+      addBtn.textContent = "Added";
+    } else {
+      addBtn.textContent = "Add";
+    }
   });
 
   div.append(img, h3, p, span2, addBtn);
