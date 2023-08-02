@@ -20,13 +20,13 @@ document.querySelectorAll(".nav-links").forEach((n) =>
 document.addEventListener("DOMContentLoaded", () => {
   fetch("https://api.sampleapis.com/cartoons/cartoons2D")
     .then((response) => response.json())
-    .then((data) => data.forEach((element) => getData(element)));
+    .then((data) => data.map((element) => getData(element)));
 });
 
 // create the getData function
 const getData = (element) => {
-  let card = document.createElement("div");
-  card.classList.add("data");
+  let div = document.createElement("div");
+  div.classList.add("data");
 
   let img = document.createElement("img");
   img.classList.add("image");
@@ -36,14 +36,22 @@ const getData = (element) => {
   h3.classList.add("title");
   h3.textContent = element.title;
 
-  let span = document.createElement("span");
-  span.textContent = "Title" + element.creator;
+  let p = document.createElement("p");
+  p.textContent = element.genre;
 
-  card.append(img, h3, span);
+  let span2 = document.createElement("span");
+  span2.textContent = element.year;
 
-  document.getElementById("collection").appendChild(card);
+  let addBtn = document.createElement("button");
+  addBtn.classList.add("like-btn");
+  addBtn.textContent = "Add";
+  addBtn.addEventListener("click", () => {
+    addBtn.textContent = "added ";
+
+    // need to add post request to post fav carton to favorate page
+  });
+
+  div.append(img, h3, p, span2, addBtn);
+
+  document.getElementById("collection").appendChild(div);
 };
-
-fetch("https://api.sampleapis.com/cartoons/cartoons2D")
-  .then((res) => res.json())
-  .then((data) => console.log(data));

@@ -7,7 +7,9 @@
 header {
   background-color: brown;
 }
-
+body {
+  background-color: whitesmoke;
+}
 li {
   list-style: none;
   font-size: 24px;
@@ -32,7 +34,6 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 80px;
-  z-index: 1;
 }
 
 .nav-branding {
@@ -43,6 +44,7 @@ a {
 
 a {
   transition: 0.7s ease;
+  color: yellow;
 }
 
 a:hover {
@@ -65,7 +67,7 @@ a:hover {
 #main-section {
   position: relative;
   top: 50px;
-  margin-left: 2%;
+  margin-left: 5%;
 }
 
 .main {
@@ -81,6 +83,17 @@ h2 {
   color: rgb(69, 69, 8);
 }
 
+.title {
+  color: brown;
+}
+
+#search {
+  width: 400px;
+  padding: 3px 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
 .main p {
   font-size: 30px;
   max-width: 70%;
@@ -94,25 +107,33 @@ h2 {
   font-size: 25px;
   padding: 5px 10px;
   background-color: brown;
-  color: white;
+  color: yellow;
+}
+.like-btn {
+  margin-top: 25px;
+  padding: 5px;
+  background-color: brown;
+  color: yellow;
+  text-align: center;
+  cursor: pointer;
 }
 
 .data {
   border: grey solid 1px;
   padding: 0.5rem;
   width: 15rem;
-  height: 25rem;
+  height: 26rem;
   display: inline-grid;
   margin: 1rem 1rem;
-  box-shadow: 3px 4px black;
-  border-radius: 20px;
+  box-shadow: 3px 4px brown;
 }
 
 .image {
   justify-self: center;
-  height: 14rem;
-  width: 13rem;
+  height: 16rem;
+  width: 14rem;
   border-radius: 20px;
+  padding-bottom: 10px;
 }
 
 #footer {
@@ -161,6 +182,7 @@ h2 {
     width: 100%;
     text-align: center;
     transition: 0.5s;
+    z-index: 1;
   }
 
   .nav-links {
@@ -179,5 +201,11 @@ h2 {
 @media (max-width: 571px) {
   #main-section {
     margin-left: 3rem;
+  }
+}
+
+@media (max-width: 1111px) {
+  #search {
+    display: none;
   }
 }
